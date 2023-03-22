@@ -15,11 +15,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name("front.index");
 
-Route::get("/adminlte", function(){
-    return view("admin.dashboard");
-});
+Route::get("/main", function(){
+    return view("admin.main");
+})->name("admin.main");
+
+Route::get("/invoice", function(){
+    return view("admin.invoice");
+})->name("admin.invoice");
 
 Route::middleware([
     'auth:sanctum',
